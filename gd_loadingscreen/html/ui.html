@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Sora", "sans-serif"],
+            mono: ["Space Mono", "monospace"]
+          },
+          colors: {
+            night: {
+              950: "#090309",
+              900: "#170717",
+              800: "#2c0b2b"
+            },
+            hotPink: "#ff00c8",
+            electricPink: "#f400ff",
+            softPink: "#ff8be8"
+          },
+          boxShadow: {
+            pink: "0 0 30px rgba(255, 0, 200, 0.28)",
+            panel: "0 20px 65px rgba(0, 0, 0, 0.48)"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Los Santos Nights</title>
+</head>
+<body class="min-h-screen w-screen overflow-hidden bg-night-950 font-display text-white opacity-0 transition-opacity duration-700">
+  <main class="relative h-screen w-screen overflow-hidden">
+    <div id="backgroundMediaMount" class="pointer-events-none absolute inset-0 z-0 overflow-hidden"></div>
+    <div class="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_14%_44%,rgba(255,0,200,0.58),transparent_36%),radial-gradient(circle_at_87%_22%,rgba(255,55,153,0.28),transparent_32%),linear-gradient(90deg,rgba(72,0,61,0.88)_0%,rgba(106,4,79,0.44)_34%,rgba(24,2,25,0.54)_72%,rgba(55,5,33,0.7)_100%)]"></div>
+    <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/75 via-fuchsia-950/10 to-black/25"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[44%] bg-gradient-to-r from-fuchsia-950/40 to-transparent"></div>
+    <div class="scanlines pointer-events-none absolute inset-0 z-[2] opacity-20"></div>
+
+    <div id="serverLogoMount" class="pointer-events-none absolute inset-0 z-[4] flex items-center justify-center px-8">
+      <div id="serverLogoFallback" class="logo-spin text-center opacity-90 drop-shadow-[0_16px_45px_rgba(0,0,0,0.85)]">
+        <p id="serverLogoFallbackName" class="font-display text-3xl font-extrabold uppercase tracking-[0.16em] text-white sm:text-5xl"></p>
+        <p class="mt-2 font-mono text-[9px] uppercase tracking-[0.48em] text-pink-200/70">Los Santos Nights</p>
+      </div>
+      <img id="serverLogoImage" class="logo-spin hidden max-h-[28vh] max-w-[min(48vw,360px)] object-contain drop-shadow-[0_16px_45px_rgba(0,0,0,0.9)]" alt="Server logo">
+    </div>
+
+    <div class="relative z-10 h-full px-6 py-6 sm:px-10 sm:py-8 lg:px-14 lg:py-10">
+      <header class="absolute right-6 top-6 flex w-44 flex-col items-stretch gap-3 sm:right-10 sm:top-8 lg:right-14 lg:top-10">
+        <a id="discordLink" href="#" target="_blank" rel="noreferrer" class="group hidden items-center gap-3 border border-white/20 bg-black/25 px-3 py-2 shadow-panel transition hover:border-fuchsia-300/70 sm:flex">
+          <span class="text-right"><span class="block text-xs font-extrabold text-white">Discord</span><span class="block font-mono text-[9px] text-fuchsia-300">Community</span></span>
+          <span class="grid h-10 w-10 place-items-center rounded-md border border-blue-200/70 bg-blue-500 text-lg font-bold text-white shadow-[0_0_20px_rgba(59,130,246,0.5)]">◉</span>
+        </a>
+        <a id="websiteLink" href="#" target="_blank" rel="noreferrer" class="group hidden items-center gap-3 border border-white/20 bg-black/25 px-3 py-2 shadow-panel transition hover:border-pink-300/70 sm:flex">
+          <span class="text-right"><span class="block text-xs font-extrabold text-white">Website</span><span class="block font-mono text-[9px] text-fuchsia-300">City portal</span></span>
+          <span class="grid h-10 w-10 place-items-center rounded-md border border-pink-200/70 bg-hotPink text-lg font-bold text-white shadow-pink">◎</span>
+        </a>
+      </header>
+
+      <section class="absolute bottom-24 left-6 top-6 w-[min(88vw,430px)] sm:bottom-28 sm:left-10 sm:top-8 lg:bottom-28 lg:left-14 lg:top-10">
+        <div class="flex h-full flex-col gap-4">
+          <div class="shrink-0 pr-4">
+            <p id="welcomeEyebrow" class="text-sm font-extrabold uppercase tracking-[-0.02em] text-white sm:text-base">WELCOME TO LOS SANTOS NIGHTS</p>
+            <h1 id="welcomeTitle" class="mt-1 text-4xl font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-hotPink drop-shadow-[0_5px_18px_rgba(255,0,200,0.4)] sm:text-6xl">YOUR NIGHT. YOUR STORY.</h1>
+            <h2 id="welcomeSubtitle" class="mt-2 text-2xl font-extrabold uppercase leading-[0.96] tracking-[-0.055em] text-white sm:text-3xl">THE CITY IS YOURS TO WRITE.</h2>
+            <div class="mt-4 h-px w-72 bg-gradient-to-r from-hotPink via-fuchsia-300 to-transparent"></div>
+          </div>
+
+          <article class="shrink-0 border border-fuchsia-400/65 bg-fuchsia-950/35 p-5 shadow-panel ring-1 ring-black/25 sm:p-6">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-md bg-hotPink text-sm font-extrabold text-white shadow-pink">✦</span>
+              <h3 class="text-sm font-extrabold uppercase tracking-[-0.02em] text-white">Los Santos Nights</h3>
+            </div>
+            <p id="welcomeDescription" class="mt-4 text-xs font-semibold leading-5 text-white/85 sm:text-sm">Step into a living city built for unforgettable roleplay.</p>
+          </article>
+
+          <article class="shrink-0 border border-fuchsia-400/65 bg-fuchsia-950/35 p-5 shadow-panel ring-1 ring-black/25 sm:p-6">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-md bg-hotPink text-sm font-extrabold text-white shadow-pink">▣</span>
+              <h3 class="text-sm font-extrabold uppercase tracking-[-0.02em] text-white">Server Rules</h3>
+            </div>
+            <ul id="rulesList" class="mt-4 space-y-2 text-xs font-semibold leading-4 text-white/85"></ul>
+          </article>
+
+          <article class="min-h-0 shrink-0 border border-fuchsia-400/65 bg-fuchsia-950/35 p-5 shadow-panel ring-1 ring-black/25 sm:p-6">
+            <div class="flex items-center gap-3">
+              <span class="grid h-9 w-9 place-items-center rounded-md bg-hotPink text-sm font-extrabold text-white shadow-pink">♟</span>
+              <h3 class="text-sm font-extrabold uppercase tracking-[-0.02em] text-white">Owners &amp; Admins</h3>
+            </div>
+            <div id="staffList" class="mt-4 grid grid-cols-2 gap-3"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="absolute bottom-5 left-[38%] right-6 sm:bottom-7 sm:right-10 lg:right-14">
+        <div class="ml-auto max-w-3xl">
+          <div class="mb-3 flex flex-wrap items-center justify-end gap-2">
+            <span class="mr-auto font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">Background video</span>
+            <button id="videoPlayButton" type="button" aria-label="Pause background video" class="rounded-md border border-fuchsia-300/50 bg-hotPink px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-white shadow-pink transition hover:bg-fuchsia-400 disabled:cursor-not-allowed disabled:opacity-40">Play</button>
+            <button id="videoMuteButton" type="button" aria-label="Mute background video" class="rounded-md border border-white/25 bg-black/35 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-white/80 transition hover:border-fuchsia-300/70 hover:text-white disabled:cursor-not-allowed disabled:opacity-40">Mute</button>
+          </div>
+          <div class="flex items-center justify-between gap-4 border-t border-white/20 bg-black/35 px-3 py-2.5">
+            <div class="flex min-w-0 items-center gap-3">
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-fuchsia-300/60 text-xs text-fuchsia-200">◌</span>
+              <div class="min-w-0">
+                <p id="progressLabel" class="truncate text-xs font-extrabold text-white">Preparing session</p>
+                <p id="statusLabel" class="truncate font-mono text-[9px] uppercase tracking-[0.14em] text-white/50">Waiting for game data</p>
+              </div>
+            </div>
+            <p id="progressValue" class="font-mono text-lg font-bold text-fuchsia-200">0%</p>
+          </div>
+          <div class="h-1.5 overflow-hidden bg-black/60">
+            <div id="progressBar" class="h-full w-0 bg-gradient-to-r from-fuchsia-500 via-hotPink to-rose-300 shadow-[0_0_20px_rgba(255,0,200,0.8)] transition-[width] duration-500"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

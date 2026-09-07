@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="title description">
+  <title id="title">Los Santos Nights</title>
+  <description id="description">Los Santos Nights server logo</description>
+  <defs>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9ac8"/>
+      <stop offset="0.32" stop-color="#e91573"/>
+      <stop offset="0.62" stop-color="#ff5da5"/>
+      <stop offset="1" stop-color="#85053e"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.28" stop-color="#7e808d"/>
+      <stop offset="0.5" stop-color="#f5f6ff"/>
+      <stop offset="0.8" stop-color="#42434d"/>
+      <stop offset="1" stop-color="#d9dbe5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="15" stdDeviation="9" flood-color="#000000" flood-opacity="0.72"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" text-anchor="middle" font-family="cursive" font-style="italic" font-weight="900">
+    <text x="450" y="225" font-size="170" fill="url(#pink)" stroke="#69052f" stroke-width="13" paint-order="stroke">Los Santos</text>
+    <text x="450" y="375" font-size="164" fill="url(#silver)" stroke="#252631" stroke-width="14" paint-order="stroke">Nights</text>
+  </g>
+</svg>
