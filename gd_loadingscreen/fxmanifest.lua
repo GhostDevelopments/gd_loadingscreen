@@ -2,7 +2,7 @@ fx_version "cerulean"
 game "gta5"
 
 author "Ghost Developments"
-description "Advanced media loading screen with YouTube, FiveMManage media, and staff branding"
+description "Advanced media loading screen with FiveMManage media, and staff branding"
 version "1.0.16"
 
 loadscreen "html/ui.html"
